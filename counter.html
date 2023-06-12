@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Counter</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        background: rgb(255, 132, 100);
+        background: linear-gradient(
+          90deg,
+          rgba(255, 132, 100, 2) 0%,
+          rgba(253, 116, 154, 1) 100%
+        );
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      .innercontainer {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .innercontainer h1 {
+        margin-bottom: 20px;
+        font-size: 60px;
+      }
+      .innercontainer button {
+        border-radius: 6px;
+        color: black;
+        padding: 10px 35px;
+        border: 0;
+        font-size: 15px;
+        font-weight: bold;
+        margin: 0 4px;
+        cursor: pointer;
+        transition: 0.5s;
+      }
+      button#down {
+        background: wheat;
+      }
+      button#down:hover {
+        background: orange;
+        color: white;
+      }
+      button#reset {
+        background: palevioletred;
+      }
+      button#reset:hover {
+        background: cornflowerblue;
+        color: greenyellow;
+      }
+      button#up {
+        background: red;
+      }
+      button#up:hover {
+        background: paleturquoise;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="innercontainer">
+        <h1 id="tittle">0</h1>
+        <div class="cardbtn">
+          <button id="down">Decrease</button>
+          <button id="reset">Reset</button>
+          <button id="up">Increase</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const maintittle = document.querySelector("#tittle");
+      let recvalue = 0;
+      const btndown = document.querySelector("#down");
+      const btnreset = document.querySelector("#reset");
+      const btnup = document.querySelector("#up");
+
+      btnup.addEventListener("click", () => {
+        recvalue++;
+        maintittle.textContent = recvalue;
+      });
+      btnreset.addEventListener("click", () => {
+        recvalue = 0;
+        maintittle.textContent = recvalue;
+      });
+      btndown.addEventListener("click", () => {
+        recvalue--;
+        maintittle.textContent = recvalue;
+      });
+    </script>
+  </body>
+</html>
